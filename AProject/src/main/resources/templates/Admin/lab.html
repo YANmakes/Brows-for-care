@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <title>Lab</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <style>
+ 
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #f0f3f5;
+    margin-top:40px;
+	
+}
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://wallpaperscraft.com/image/dark_background_line_surface_65896_1920x1080.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.nav.li.a.userdd {
+    padding: 5px 15px
+}
+
+
+.listWrap {
+    
+    height: 800px;
+    width: 250px;
+    
+}
+
+.list {
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    
+}
+
+.list li {
+    
+    background-color: #f0f0f0;
+    display: table-row;
+    color: #5c5c5c;
+
+}
+
+.list li:nth-child(odd) {
+    
+    background-color: #f2f2f2;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+
+.list li:nth-child(odd):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list li:nth-child(even) {
+    
+    background-color: #e8e8e8;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+
+.list li:nth-child(even):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list li:nth-child(1) span:first-child {
+    
+    border-top-left-radius: 6px;
+    
+}
+
+.list li:nth-child(1) span:last-child {
+    
+    border-top-right-radius: 6px;
+    
+}
+
+
+.list li:nth-child(1) {
+    
+    background-color: #201c2b;
+    text-transform: uppercase;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #b8b5c0;
+
+    
+}
+
+.list li:nth-child(1):hover {
+    
+
+    
+}
+
+
+
+.list li:nth-child(1) span {
+    
+    border-bottom: 2px solid #7d5bbe;
+    padding: 14px;
+    
+}
+
+.list span {
+    
+    text-align: center;
+    display: table-cell;
+    padding: 6px;
+    vertical-align: middle;
+    
+}
+
+
+.list span:nth-child(2) {
+    
+    
+}
+
+</style>
+<script>
+	$( document ).ready(function() {
+    
+    initEvents();
+    
+});
+
+function initEvents() {
+    
+    $(".list").hover(function(){
+        
+        $(".list li:first span").stop().animate({borderWidth: "5", backgroundColor: "#3f3659", color: "#e5e3e8"},{duration: 170, complete: function() {}} ); 
+        
+    }, function () {
+        
+        $(".list li:first span").stop().animate({borderWidth: "2", backgroundColor: "#201c2b", color: "#b8b5c0"},{duration: 170, complete: function() {}} ); 
+
+    });
+    
+}
+
+function animateTable(e) { 
+    
+    
+    
+    
+}
+	</script>
+</head>
+<body>
+
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="#">BFC</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					<li>
+							<a th:href="@{/adminpatient}">User</a>
+						</li>
+						<li>
+							<a th:href="@{/admindoctor}">Doctor</a>
+						</li>
+						<li>
+							<a th:href="@{/adminpharmcy}">Pharmacy</a>
+						</li>
+						<li>
+							<a th:href="@{/adminclinic}">Clinic</a>
+						</li>
+						<li class="active">
+							<a th:href="@{/adminlab}">Lab</a>
+						</li>
+						<li>
+							<a th:href="@{/adminadv}">Advertisements</a>
+						</li>
+						<li>
+							<a th:href="@{/admineditadv}">Edit Ads</a>
+						</li>
+						<li>
+							<a th:href="@{/addadmin}">Add Admin</a>
+						</li>
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								
+								
+								<li class="divider">
+								</li>
+								<li>
+									<a href="/logout">Logout</a>
+								</li>
+								
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="row">
+<div class ="col-md-2">
+</div>
+<div class ="col-md-6">
+<div class="container-fluid">
+            <div class = "input-group">
+               <input type = "text" class = "form-control" placeholder="Search Lab.."/>
+               
+               <span class = "input-group-btn">
+                  <button class = "btn btn-default" type = "button">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                  </button>
+               </span>
+               
+            </div>
+         </div>
+		 </div>
+<div class ="col-md-3"> 
+<button type="button" class="btn btn-success">Active <span class="badge" th:text="${active}"></span></button>
+<button type="button" class="btn btn-danger">Disabled <span class="badge" th:text="${blocked}"></span></button>
+<button type="button" class="btn btn-warning">Total <span class="badge" th:text="${all}"></span></button>
+
+</div>
+		 </div>
+		 <hr/>
+<div class="row">
+		<div class="col-md-2">
+</div>
+		<div class="col-md-10">
+
+			<div class="container-fluid">
+
+    <div class="listWrap">
+    
+        <ul class="list">
+        
+            <li>
+                
+                <span>Name</span>
+                <span>Location</span>
+                <span>Rating</span>
+				<span>SLMC No</span>
+				<span>Email</span>
+				<span>Address</span>
+				<span>Telephone</span>
+				<span>Status</span>
+				 <span>Delete</span>
+				<span>Block</span>
+				<span>UNBlock</span>
+				<span></span>
+				
+                
+            </li>
+            <li th:each="lab : ${labs}">
+                
+                <span th:text="${lab.name}"></span>
+				<span th:text="${lab.location}"></span>
+                <span th:text="${lab.rating}"></span>
+               
+				<span th:text="${lab.slmc}"></span>
+				<span th:text="${lab.email}"></span>
+				<span th:text="${lab.address}"></span>
+				<span th:text="${lab.telephone}"></span>
+				<span th:switch="${lab.active}">
+				<b th:case="1">Active</b>
+				<b th:case="0">Blocked</b>
+				</span>
+				
+               <span>
+                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                        <a th:href="@{'/admindelete/'+${lab.labId}+'/'+${lab.role}}" type="button" class="btn btn-danger">Delete</a>
+                        
+                    </div>
+                </span>
+				<span>
+                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                        <a th:href="@{'/block/'+${lab.labId}+'/'+${6}}" type="button" class="btn btn-primary">Block</a>
+                        
+                    </div>
+                </span>
+                
+                  <span>
+                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                        <a th:href="@{'/unblock/'+${lab.labId}+'/'+${6}}" type="button" class="btn btn-info">UnBlock</a>
+                        
+                    </div>
+                </span>
+                
+            
+            </li>
+           
+        </ul>
+
+    </div>
+
+</div>
+			</div>
+         </div>				
+					
+
+					
+
+</body>
+</html>

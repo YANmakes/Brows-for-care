@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>Index Page</title>
+</head>
+<body>  
+
+	<div th:if="${msg}">
+		<h2 th:text="${msg}" ></h2>
+	</div>
+	
+				<h3>Check your Email....</h3>
+				
+	<form th:action="@{'/verification/'+${coded}+'/'+${role}+'/'+{id}}" method="POST">  
+            
+					<label for="tpic-id">Enter the code</label>
+					<input type="text" name="encode"/>
+					
+					
+					
+					<input type="submit" value="Submit"/>
+				
+			
+        </form>
+</body>
+</html>
+

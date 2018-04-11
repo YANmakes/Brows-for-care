@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head> 
+		<title>Verify</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+		
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+		
+		
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
+
+		
+		<style>
+body {
+	height: 663px;
+    background:url(http://hdwallpapersbackgrounds.us/backgrounds-image/wallpapers-hd-3s-1920x1080/hd-wallpapers-914ld1u2-3s-1920x1080.jpg);
+}
+.jumbotron.text-center {
+	width: 85%;
+	background: rgba(171,171,171,0.26);
+	text-align: center;
+	height: 250px;
+	margin: 100px auto;
+	padding-top: 60px;
+	padding-bottom: 0;
+	-webkit-box-shadow: 10px 13px 31px 0px rgba(51,51,51,1);
+-moz-box-shadow: 10px 13px 31px 0px rgba(51,51,51,1);
+box-shadow: 10px 13px 31px 0px rgba(51,51,51,1);
+color: white;
+}
+input.form-control.col-md-6 {
+    width: 50%;
+    margin-right: 1em;
+    display: inline;
+}
+
+div#notes {
+    margin-top: 10%;
+    width: 98%;
+    margin-left: 1%;
+}
+
+@media (min-width: 991px) {
+	.col-md-9.col-sm-12 {
+    	margin-left: 12%;
+	}
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+  
+  </div>
+  <div th:text="${msg}"></div>
+  <div class="row">
+    <div class="alert alert-success col-md-12" role="alert" id="notes">
+      
+      <ul>
+        <li><h5>You will recieve a verification code on your mail after you registered. Enter that code below.</h5></li>
+        <li><h5>If somehow, you did not recieve the verification email then <a href="#">Resend the verification email</a></h5></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron text-center">
+        <h1>Enter the verification code</h1>
+        <form method="post" th:action="@{'/verification/'+${coded}+'/'+${role}+'/'+${id}}" role="form">
+          <div class="col-md-9 col-sm-12">
+            <div class="form-group form-group-lg">
+              <input type="text" class="form-control col-md-6 col-sm-6 col-sm-offset-2" name="encode" required="true"/>
+              <input class="btn btn-success btn-lg col-md-2 col-sm-2" type="submit" value="Verify"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

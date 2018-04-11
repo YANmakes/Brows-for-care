@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <style>
+ 
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #f0f3f5;
+    margin-top:40px;
+	
+}
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://i.ytimg.com/vi/gKIFk8BJsDc/maxresdefault.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.nav.li.a.userdd {
+    padding: 5px 15px
+}
+.userprofile {
+    width: 100%;
+	float: left;
+	clear: both;
+	margin: 40px auto
+}
+.userprofile .userpic {
+	height: 100px;
+	width: 100px;
+	clear: both;
+	margin: 0 auto;
+	display: block;
+	border-radius: 100%;
+	box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	position: relative; 
+}
+.userprofile .userpic .userpicimg {
+	height: auto;
+	width: 100%;
+	border-radius: 100%;
+}
+.username {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+	margin-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.username+p {
+	color: #000000;
+	font-size: 13px;
+	line-height: 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.userprofile.social {
+	background: url(https://s3.amazonaws.com/f6s-public/media/377624.png) no-repeat top center;
+	background-size: 100%;
+	padding: 50px 0;
+	margin: 0
+}
+.userprofile.social .username {
+	color: #000000;
+}
+.userprofile.social .username+p {
+	color: #000000;
+	opacity: 0.8;
+	font-size: 15px;
+	
+}
+
+.panel {
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    margin-bottom: 35px;
+    border-radius: 0px;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eef2f4;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #607d8b;
+}
+.listWrap {
+    
+    height: 800px;
+    width: 250px;
+    
+}
+
+.list {
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    
+}
+
+.list2 {
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    
+}
+
+
+.list li {
+    
+    background-color: #f0f0f0;
+    display: table-row;
+    color: #5c5c5c;
+
+}
+
+
+.list2 li {
+    
+    background-color: #f0f0f0;
+    display: table-row;
+    color: #C13719;
+
+}
+.list li:nth-child(odd) {
+    
+    background-color: #f2f2f2;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+
+.list2 li:nth-child(odd) {
+    
+    background-color: #f2f2f2;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+.list li:nth-child(odd):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list2 li:nth-child(odd):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list li:nth-child(even) {
+    
+    background-color: #e8e8e8;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+
+.list2 li:nth-child(even) {
+    
+    background-color: #e8e8e8;
+    display: table-row;
+    font-size: 10pt;
+    color: #5c5c5c;
+
+}
+
+.list li:nth-child(even):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list2 li:nth-child(even):hover {
+    
+    background-color: #dadada;
+
+}
+
+.list li:nth-child(1) span:first-child {
+    
+    border-top-left-radius: 6px;
+    
+}
+
+.list2 li:nth-child(1) span:first-child {
+    
+    border-top-left-radius: 6px;
+    
+}
+.list li:nth-child(1) span:last-child {
+    
+    border-top-right-radius: 6px;
+    
+}
+
+.list2 li:nth-child(1) span:last-child {
+    
+    border-top-right-radius: 6px;
+    
+}
+.list li:nth-child(1) {
+    
+    background-color: #201c2b;
+    text-transform: uppercase;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #b8b5c0;
+
+    
+}
+
+
+
+
+.list li:nth-child(1):hover {
+    
+
+    
+}
+
+.list2 li:nth-child(1):hover {
+    
+
+    
+}
+
+.list li:nth-child(1) span {
+    
+    border-bottom: 2px solid #7d5bbe;
+    padding: 14px;
+    
+}
+
+
+.list span {
+    
+    text-align: center;
+    display: table-cell;
+    padding: 6px;
+    vertical-align: middle;
+    
+}
+
+.list2 span {
+    
+    text-align: center;
+    display: table-cell;
+    padding: 6px;
+    vertical-align: middle;
+    
+}
+
+.list span:nth-child(2) {
+    
+    
+}
+
+.list2 span:nth-child(2) {
+    
+    
+}
+
+		h2 {
+  text-align: center;
+}
+
+.p {
+  text-align: center;
+  padding-top: 130px;
+}
+</style>
+<script>
+	$( document ).ready(function() {
+    
+    initEvents();
+    
+});
+
+function initEvents() {
+    
+    $(".list").hover(function(){
+        
+        $(".list li:first span").stop().animate({borderWidth: "5", backgroundColor: "#3f3659", color: "#e5e3e8"},{duration: 170, complete: function() {}} ); 
+        
+    }, function () {
+        
+        $(".list li:first span").stop().animate({borderWidth: "2", backgroundColor: "#201c2b", color: "#b8b5c0"},{duration: 170, complete: function() {}} ); 
+
+    });
+    
+}
+
+function animateTable(e) { 
+    
+    
+    
+    
+}
+	</script>
+</head>
+<body>
+
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="#">BFC</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					<li>
+						<a th:href="@{'/patientnotification/'}+${session.id}">Notifications</a>
+						</li>
+						<li class="active">
+							<a th:href="@{/patientindex}">Search</a>
+						</li>
+						<li>
+							<a th:href="@{'/patientprofile/'}+${session.id}">History</a>
+						</li>
+						
+						<li>
+							<a th:href="@{'/prescs/'}+${session.id}">Prescriptions</a>
+						</li>
+						
+						<li>
+							<a th:href="@{'/reports/'+${session.id}+'/'+${2}}">View report</a>
+						</li>
+						
+						<li>
+							<a th:href="@{'/getads/'+${session.id}+'/'+${2}}">Advertisements</a>
+						</li>
+						
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								
+								<li>
+									<a th:href="@{'/editpatient/'+${session.id}}">Edit profile</a>
+								</li>
+								
+								<li class="divider">
+								</li>
+								<li>
+									<a href="/logout">Logout</a>
+								</li>
+								
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container">
+<div class="row">
+      <div class="col-md-12 text-center ">
+        <div class="panel panel-default">
+          <div class="userprofile social ">
+            <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="userpicimg"/> </div>
+            <h3 class="username" th:text="${session.name}"></h3>
+            <p>General User</p>
+            
+          </div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+
+<div class="col-md-2">
+			<ul class="nav nav-stacked nav-pills">
+				<li class="active">
+					<a href="/patientindex"><i class="glyphicon glyphicon-briefcase"></i> Doctor</a>
+				</li>
+				<li>
+					<a href="/patientpharmacy"><span class="glyphicon glyphicon-list-alt"></span> Pharmacy</a>
+				</li>
+				<li>
+					<a href="patientlab"><span class="glyphicon glyphicon-plus-sign"></span> Laboratory</a>
+				</li>
+				<li>
+					<a href="/patientclinic"><i class="glyphicon glyphicon-calendar"></i> Clinic</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="col-md-10">
+			
+			<div class = "col-lg-8">
+            <div class = "input-group">
+               <input id="search" type = "text" class = "form-control" placeholder="Search Lab.." />
+               
+               <span class = "input-group-btn">
+                  <button class = "btn btn-default" type = "button">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                  </button>
+               </span>
+               
+            </div>
+				<hr />
+				
+<script>
+$(document).ready(function(){
+  $(" #search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(" #mylist li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+			<div class="row">
+			<div class="container">
+
+
+    <div class="listWrap">
+    
+        <ul class="list">
+        
+            <li>
+                <span>Name</span>
+				<span>Specialization</span>
+                <span>Location</span>
+                <span>Telephone</span>
+                
+                
+            </li >
+           </ul>
+        <ul class="list2" id="mylist">
+       
+			  <li th:each="doctor : ${doctors}">
+                <span th:text="${doctor.name}"> </span>
+				<span th:text="${doctor.specialization}"></span>
+                <span th:text="${doctor.address}"></span>
+                <span th:text="${doctor.telephone}"></span>
+				
+                
+                
+                <span>
+                    <a th:href="@{/request/{id}/{id2}/{id3}/{id4}(id=${doctor.doctorId}, id2=${session.id},id3=${'doctor'},id4=${'Home visit'})}" class='btn btn-info btn-xs' href="#">Call For Visit</a> 
+                     
+     
+                </span>
+                
+           	 </li>
+          
+            
+
+        </ul>
+
+    </div>
+
+</div>
+			</div>
+         </div>				
+					
+
+		 		
+		</div>
+	</div>
+</div>
+</body>
+</html>

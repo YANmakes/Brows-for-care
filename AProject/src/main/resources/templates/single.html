@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>Index Page</title>
+</head>
+<body>  
+	  
+            <table>
+				<tr>
+					<th>ID</th>
+					<td th:text="${patients.email}"></td>
+				</tr>
+				<tr>
+					<th>Module</th>
+					<td th:text="${patients.name}"></td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td th:text="${patients.gender}"></td>
+				</tr>
+			</table> 
+			
+			<a th:href="@{/topics}">Back
+					</a> 
+       
+    </body>
+</html>

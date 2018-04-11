@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <style>
+ 
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #f0f3f5;
+    margin-top:40px;
+	
+}
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://www.walldevil.com/wallpapers/a94/background-textured-backgrounds-blue-dark-wallpapers-black-wallpaper-images.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.nav.li.a.userdd {
+    padding: 5px 15px
+}
+.userprofile {
+    width: 100%;
+	float: left;
+	clear: both;
+	margin: 40px auto
+}
+.userprofile .userpic {
+	height: 100px;
+	width: 100px;
+	clear: both;
+	margin: 0 auto;
+	display: block;
+	border-radius: 100%;
+	box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	position: relative; 
+}
+.userprofile .userpic .userpicimg {
+	height: auto;
+	width: 100%;
+	border-radius: 100%;
+}
+.username {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+	margin-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.username+p {
+	color: #000000;
+	font-size: 13px;
+	line-height: 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.userprofile.social {
+	background: url(http://www.grownupmoney.com/wp-content/uploads/2013/09/Stethoscope-e1392677013389-1024x407.png) no-repeat top center;
+	background-size: 100%;
+	padding: 50px 0;
+	margin: 0
+}
+.userprofile.social .username {
+	color: #000000;
+}
+.userprofile.social .username+p {
+	color: #000000;
+	opacity: 0.8;
+	font-size: 15px;
+	
+}
+
+.panel {
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    margin-bottom: 35px;
+    border-radius: 0px;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eef2f4;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #607d8b;
+}
+
+.jumbotron
+{   
+    padding-top: 0px;
+    padding-bottom:0px;
+    background-size: cover;
+    background: contain;
+    width: 100%;
+    height: 400px;
+                  
+                  
+    max-width:1400px;  
+ }
+ .custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+	background-color: white;
+	font-size: 20px;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+		h2 {
+  text-align: center;
+}
+
+.p {
+  text-align: center;
+  padding-top: 130px;
+}
+</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="#">BFC</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a th:href="@{'/clinicindex/'+${session.id}}">Notifications</a>
+						</li>
+						
+						<li>
+							<a th:href="@{'/clinicprofile/'+${session.id}+'/'+${5}}">History</a>
+						</li>
+						<li>
+							<a th:href="@{'/getads/'+${session.id}+'/'+${5}}">Advertisement</a>
+						</li>
+						<li class="active">
+							<a th:href="@{'/clinicconsults/' + ${session.id}}">Add Consultation</a>
+						</li>
+						<li>
+							<a th:href="@{'/clinicadv/'+${session.id}}">Upload</a>
+						</li>
+						
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								
+								
+								<li class="divider">
+								</li>
+								<li>
+									<a href="/logout">Logout</a>
+								</li>
+								
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container">
+<div class="row">
+      <div class="col-md-12 text-center ">
+        <div class="panel panel-default">
+          <div class="userprofile social ">
+            <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="userpicimg"/> </div>
+            <h3 class="username" th:text="${session.name}"></h3>
+            <p>Clinic</p>
+            
+          </div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="container">
+			  <table class="table table-striped custab">
+    <thead>
+    
+        <tr>
+            <th>Consultation</th>
+            <th>Doctor</th>
+			<th>Day</th>
+            <th>Time</th>
+			<th>Cost</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr th:each="consult : ${consults}">
+                <td th:text="${consult.conName}"></td>
+                <td th:text="${consult.doctor}"></td>
+                <td th:text="${consult.day}"></td>
+                <td th:text="${consult.time}"></td>
+                <td th:text="${consult.cost}"></td>
+       
+                <td class="text-center"> <a th:href="@{'/deleteconsult/'+${consult.clinicId}+'/'+${consult.consultId}}" class="btn btn-danger btn-md"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            
+         </tbody>
+    </table>
+	
+ 
+  <div class="row text-center">
+     
+      <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Add</a>
+  </div>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Add new</h4>
+    </div>
+      
+    <form th:action="@{'/addconsult/'+${session.id}}" method="POST">
+
+        <div class="modal-body">
+		
+		
+		<div class="col-md-12">
+                <div class="form-group">
+                    <label>Consultation Type</label>
+                    <input type="text" name="conName" class="form-control" required="true"/>
+                </div>
+            </div>
+
+			<div class="col-md-6">
+                <div class="form-group">
+                    <label>Doctor</label>
+                    <input type="text" name="doctor" class="form-control" required="true"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Day</label>
+                    <input type="text" name="day" class="form-control" required="true"/>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Time</label>
+                    <input type="text" name="time" class="form-control" required="true"/>
+                </div>
+            </div>
+			
+			 <div class="col-md-6">
+                <div class="form-group">
+                    <label>Cost</label>
+                    <input type="text" name="cost" class="form-control" required="true"/>
+                </div>
+            </div>
+          
+           
+            
+        </div>
+        <div class="modal-footer">
+            <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

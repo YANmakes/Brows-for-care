@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head> 
+		<title>Welcome</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+		
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+		
+		
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
+<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Risque" rel="stylesheet" />		
+<style>
+		
+		body {
+	height: 663px;
+    background:url(https://wallpaperscraft.com/image/black_background_lines_scratches_69440_1920x1080.jpg);
+	font-family: 'Lobster Two', cursive;
+        font-size: 60px;
+		color: white;
+		margin-top: 60px;
+}
+.btn-primary {
+    box-shadow:0 0 0 1px #428bca inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #357ebd, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#428bca;
+}
+.btn3d {
+    transition:all .08s linear;
+    position:relative;
+    outline:medium none;
+    -moz-outline-style:none;
+    border:0px;
+    margin-right:10px;
+    margin-top:15px;
+}
+.btn3d:focus {
+    outline:medium none;
+    -moz-outline-style:none;
+}
+.btn3d:active {
+    top:9px;
+}
+ .btn-success {
+    box-shadow:0 0 0 1px #5cb85c inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4cae4c, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#5cb85c;
+}
+		</style>
+		</head>
+		<body>
+		    <div class="row">
+					    <div class="col-md-1">
+</div>
+			
+			Hi There,
+			</div>
+					    <div class="row">
+					    <div class="col-md-2">
+</div>
+Welcome
+</div>
+		    <div class="row">
+					    <div class="col-md-3">
+</div>
+			
+			You are successfully Signed up,
+			</div>
+		    <div class="row">
+					    <div class="col-md-4">
+</div>
+			
+			Thanks for joining with us..
+			</div>
+		    <div class="row">
+			<div class="col-md-8">
+</div>
+
+<a type="button" class="btn btn-primary btn-lg btn3d" th:href="@{/login}"><span class="glyphicon glyphicon-user"></span> Login page</a>
+<a type="button" class="btn btn-success btn-lg btn3d" th:href="@{/bfc}"><span class="glyphicon glyphicon-home"></span> Home page</a>
+		</div>
+		</body>
+		</html>

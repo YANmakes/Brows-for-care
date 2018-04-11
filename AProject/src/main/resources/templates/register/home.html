@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head> 
+		<title>Verify</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+		
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+		
+		
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
+<style>
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 1s all ease-in-out .10s;
+       -moz-transition: 1s all ease-in-out .10s; 
+        -ms-transition: 1s all ease-in-out .10s; 
+         -o-transition: 1s all ease-in-out .10s; 
+            transition: 1s all ease-in-out .10s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 1s all ease-in-out .10s;
+       -moz-transition: 1s all ease-in-out .10s; 
+        -ms-transition: 1s all ease-in-out .10s; 
+         -o-transition: 1s all ease-in-out .10s; 
+            transition: 1s all ease-in-out .10s;    
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://i.pinimg.com/originals/7f/b0/89/7fb08907b2ae96c7d758dcf49c92c796.jpg); 
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://i.pinimg.com/originals/6f/c2/94/6fc294b81ea1dff420535cf96b1b89b9.jpg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(http://uscapsa.org/wp-content/uploads/2015/08/Pills-APSA-Background.jpeg);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
+}
+</style>
+
+</head>
+<body>
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="#">BFC</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+							<a th:href="@{/bfc}">Home</a>
+						</li>
+					<li>
+							<a th:href="@{/login}">Login</a>
+						</li>
+						<li>
+							<a th:href="@{/brows}">Register</a>
+						</li>
+						<li>
+							<a href="aboutus.html">About us</a>
+						</li>
+						
+						
+					</ul>
+					
+				
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Welcome To BFC</h1>        
+        </hgroup>
+		<a type="button" th:href="@{/brows}" class="btn btn-primary btn-lg" role="button">Register</a>
+		<a type="button" th:href="@{/login}" class="btn btn-primary btn-lg" role="button">Login</a>      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>All Medical Services under one Website</h1>        
+        </hgroup>       
+        <a type="button" th:href="@{/brows}" class="btn btn-primary btn-lg" role="button">Register</a>
+		<a type="button" th:href="@{/login}" class="btn btn-primary btn-lg" role="button">Login</a>  
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>We always care about you..</h1>        
+        </hgroup>
+<a type="button" th:href="@{/brows}" class="btn btn-primary btn-lg" role="button">Register</a>
+		<a type="button" th:href="@{/login}" class="btn btn-primary btn-lg" role="button">Login</a>      </div>
+    </div>
+  </div> 
+</div>
+</body>
+</html>

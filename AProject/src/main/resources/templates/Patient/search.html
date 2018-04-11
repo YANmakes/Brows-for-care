@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>Index Page</title>
+</head>
+<body>  
+	  
+            <table>
+				<tr>
+					<th>ID</th>
+					<th>Module</th>
+					<th>Description</th>
+				</tr>
+				<tr th:each="doctor : ${doctors}">
+					
+					<td th:text="${doctor.Name}"></td>
+					<td th:text="${doctor.Address}"></td>
+					<td th:text="${doctor.Email}"></td>
+					<td th:text="${doctor.Password}"></td>
+					<td th:text="${doctor.Slmc}"></td>
+					<td th:text="${doctor.Hospital}"></td>
+					
+					
+				</tr>	
+				
+			</table>  
+       
+    </body>
+</html>
